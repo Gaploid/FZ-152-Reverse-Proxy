@@ -21,7 +21,7 @@ For the end user that would be a transperent mechanism and you dont need change 
 1. SSH to VM and execute 'git clone' 
 2. Make the script executable 'chmod +x install.sh'
 3. Run script 'sudo ./install.sh <incoming_domain> <url_to_forward_traffic>'
-example: 'sudo ./install.sh example.com http://example.com' where <incoming_domain> is facade DNS name for that virtual machine and <url_to_forward_traffic> is destination for the traffic.
+example: 'sudo ./install.sh example.com http://example.com' where <incoming_domain> is facade DNS name for that virtual machine and <url_to_forward_traffic> is destination for the traffic. It should automatically install all dependencies and configure on behalf of you all components. You will need to answer "No" on that screen <img src="./images/screen1.png" width=500>
 4. That's all. Now all traffic would be forwarded through that virtual machine and also all POST, DELETE, PUT requests will be saved in logs and in database: proxy_logs in table: accesslog. 
 
 

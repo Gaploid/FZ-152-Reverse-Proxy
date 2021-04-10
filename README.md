@@ -16,13 +16,18 @@ For the end-user, that would be a transparent mechanism and you don't need to ch
 
 
 ## Installation
-0. Create a virtual machine and make it available to the internet, 
-1. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create A - record and point it to IP address to the newly created VM.
-1. SSH to VM and execute 'git clone' 
-2. Make the script executable 'chmod +x install.sh'
-3. Run script 'sudo ./install.sh <incoming_domain> <url_to_forward_traffic>'
-example: 'sudo ./install.sh example.com http://example.com' where <incoming_domain> is facade DNS name for that virtual machine and <url_to_forward_traffic> is destination for the traffic. It should automatically install all dependencies and configure on behalf of you all components. You will need to answer "No" on that screen <img src="./images/screen1.png" width=500>
-4. That's all. Now all traffic would be forwarded through that virtual machine and also all POST, DELETE, PUT requests will be saved in logs and in database: proxy_logs in table: accesslog. 
+
+If you need SSL support then you should do that step before:
+
+0. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create <b>A - record</b> and point it to IP address to the newly created VM.
+
+
+1. Create a virtual machine and make it available to the internet, 
+2. SSH to VM and execute `git clone https://github.com/Gaploid/FZ-152-Reverse-Proxy` 
+3. Make the script executable `chmod +x install.sh`
+4. Run script `sudo ./install.sh <incoming_domain> <url_to_forward_traffic>`
+example: `sudo ./install.sh example.com http://example.com` where <incoming_domain> is facade DNS name for that virtual machine and <url_to_forward_traffic> is destination for the traffic. It should automatically install all dependencies and configure on behalf of you all components. You will need to answer "No" on that screen <img src="./images/screen1.png" width=500>
+5. That's all. Now all traffic would be forwarded through that virtual machine and also all POST, DELETE, PUT requests will be saved in logs and in database: proxy_logs in table: accesslog. 
 
 
 ## Thanks to these guides:

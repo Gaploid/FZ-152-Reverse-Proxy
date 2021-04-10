@@ -4,20 +4,20 @@ That example will help you setup reverse proxy to catch private data and dump it
 ## How it works
 The Russiamn Federal Law 152-FZ said that data should be collected and other operations in Russia using databases during <b><u>ingestion</u></b>. <a href='http://www.consultant.ru/document/cons_doc_LAW_61801/cbf4e15b7c330f9372e876cdf2bc928bad7950ef/'>Here a link to that law. </a>
 
-Therefore we just need collect, update and keep it up-to-date in database located in Russia. There is no requarements to format and structure of that data. Based on these assumptions we could create proxy service between client (mobile app, app, web browser) and backend server (web-site, API and etc) that will catch incomping data and save it to local database. Below you can find the architecture diagram of that scenario. 
+Therefore we just need to collect, update and keep it up-to-date in a database located in Russia. There are no requirements to format and structure that data. Based on these assumptions we could create a proxy service between a client (mobile app, app, web browser) and backend server (web-site, API and etc) that will catch incoming data and save it to a local database. Below you can find the architecture diagram of that scenario. 
 
-<img src="./images/arch.png" width=500 />
+<div style="text-align:center"><img src="./images/arch.png" width=500 /></div>
 
-1. Route53 or any other DNS management system could route user requests based on thier geo. In our case users from Russia should be routed at first step to our Proxy server.
-2. Save that data to local file system and to local PostgreSQL database
-3. Then forward traffic to origin destination url, get reposnse and return it to the end user.
+1. Route53 or any other DNS management system could route user requests based on their geo. In our case users from Russia should be routed at the first step to our Proxy server.
+2. Save that data to the local file system and the local PostgreSQL database
+3. Then forward traffic to the origin-destination URL, get a response and return it to the end-user.
 
-For the end user that would be a transperent mechanism and you dont need change anything on thier end. To make it fully transperent you should own and have access to change A - records in your DNS name to add our proxy server for Russian users.
+For the end-user, that would be a transparent mechanism and you don't need to change anything on their end. To make it fully transparent you should own and have access to change A - records in your DNS name to add our proxy server for Russian users.
 
 
 ## Installation
-0. Create virtual machine and make it available to internet, 
-1. Setup DNS to that machine to get SSL certificate from let's encrypt. You will need to crete A - record and point it to ip adress to newlly created VM.
+0. Create a virtual machine and make it available to the internet, 
+1. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create A - record and point it to IP address to the newly created VM.
 1. SSH to VM and execute 'git clone' 
 2. Make the script executable 'chmod +x install.sh'
 3. Run script 'sudo ./install.sh <incoming_domain> <url_to_forward_traffic>'

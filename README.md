@@ -1,5 +1,7 @@
 # FZ-152-Reverse-Proxy
-That example will help you setup reverse proxy to catch private data and dump it in local database. This easy to go solution could make your web-service or web-site compliant with Federal Law FZ-152. Of course you will need to double check with legal if that solution will be suitable for your scenario. That solution is not certified in any official agencies and you should use it on your own risk. 
+That example will help you setup reverse proxy to catch private data and dump it in local database. This easy to go solution could make your web-service or web-site compliant with Federal Law FZ-152. 
+
+:warning: Of course you will need to double check with legal if that solution will be suitable for your scenario. That solution is not certified in any official agencies and you should use it on your own risk.</u> 
 
 ## How it works
 The Russiamn Federal Law 152-FZ said that data should be collected and other operations in Russia using databases during <b><u>ingestion</u></b>. <a href='http://www.consultant.ru/document/cons_doc_LAW_61801/cbf4e15b7c330f9372e876cdf2bc928bad7950ef/'>Here a link to that law. </a>

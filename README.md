@@ -21,6 +21,7 @@ If you need SSL support then you should do that step before:
 
 0. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create <b>A - record</b> and point it to IP address to the newly created VM.
 
+Rest steps:
 
 1. Create a virtual machine and make it available to the internet, 
 2. SSH to VM and execute `git clone https://github.com/Gaploid/FZ-152-Reverse-Proxy` 

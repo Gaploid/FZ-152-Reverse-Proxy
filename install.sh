@@ -67,14 +67,6 @@ ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/rev
 sudo systemctl restart nginx
 echo "-------------- Reverse proxy configured --------------"
 
-# Installing lets encrypt bot and configure SSL
-#apt-get update
-#apt-get install software-properties-common
-#add-apt-repository ppa:certbot/certbot
-#apt-get update
-#apt-get install python3-certbot-nginx
-
-#certbot --nginx
 
 # Creating database, user and granting access
 

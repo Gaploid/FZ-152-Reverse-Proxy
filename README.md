@@ -17,12 +17,6 @@ For the end-user, that would be a transparent mechanism and you don't need to ch
 
 ## Installation
 
-If you need SSL support then you should do that step before:
-
-0. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create <b>A - record</b> and point it to IP address to the newly created VM.
-
-Rest steps:
-
 1. Create a virtual machine and make it available to the internet, 
 2. SSH to VM and execute `git clone https://github.com/Gaploid/FZ-152-Reverse-Proxy` 
 3. Make the script executable `chmod +x install.sh`
@@ -30,6 +24,15 @@ Rest steps:
 example: `sudo ./install.sh example.com http://example.com` where <incoming_domain> is facade DNS name for that virtual machine and <url_to_forward_traffic> is destination for the traffic. It should automatically install all dependencies and configure on behalf of you all components. You will need to answer "No" on that screen <img src="./images/screen1.png" width=500>
 5. That's all. Now all traffic would be forwarded through that virtual machine and also all POST, DELETE, PUT requests will be saved in logs and in database: proxy_logs in table: accesslog. 
 
+If you need SSL support for you Proxy then you should do these steps after:
+
+0. Setup DNS to that machine to get an SSL certificate from let's encrypt. You will need to create <b>A - record</b> and point it to IP address to the newly created VM.
+
+**NOTE**
+Your server should be available on that stage by DNS name, cause Let's encrypt will check that.
+
+1. run `./add_ssl.sh`
+2. it will prompt questions regarding your new SSL certificate and ask on what endpoint you want add configuration. In our case that would be 'example.com' domain. 
 
 ## Thanks to these guides:
 * nginx reverse proxy - https://www.scaleway.com/en/docs/how-to-configure-nginx-reverse-proxy/ 
